@@ -1,0 +1,284 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the contact form component.
+// -----------------------------------------------------------------------------
+
+.contact-form,
+.wpcf7 {
+    font-size: 18px;
+    color: $text-color;
+    font-family: $font-raleway;
+
+    br,
+    p:empty {
+        display: none;
+    }
+
+    .wpcf7-not-valid-tip {
+        margin-top: -5px;
+        font-size: 16px;
+    }
+    
+    .wpcf7-form .wpcf7-response-output {
+        margin: 0;
+        padding: 7px 10px;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .required-asterisk {
+        color: #e42313;
+    }
+
+    .columns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0 15px;
+        width: 50%;
+        margin-bottom: 25px !important;
+
+        &-full {
+            width: 100%;
+
+            .wpcf7-form-control-wrap {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        &-right {
+            margin-left: auto;
+        }
+
+        &-center {
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: flex;
+            width: fit-content;
+            margin-bottom: 5px !important;
+            font-family: $font-raleway-semibold;
+            color: #000;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            height: 120px;
+            padding: 12px 15px;
+            font-family: $font-raleway-semibold;
+            font-size: 16px;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid #dbdbdb;
+            border-radius: 0;
+            transition: .35s all ease-in-out;
+            resize: none;
+
+            &:focus {
+                border-color: $text-color;
+            }
+
+            @include on-event() {
+                border-radius: 0;
+                outline: none
+            }
+        }
+
+        input {
+            width: 100%;
+            max-width: 100%;
+            height: 45px;
+            padding: 8px 15px;
+            font-family: $font-raleway-semibold;
+            font-size: 16px;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid #dbdbdb;
+            border-radius: 0;
+            transition: .35s all ease-in-out;
+
+            &:focus {
+                border-color: $text-color;
+            }
+
+            @include on-event() {
+                border-radius: 0;
+                outline: none
+            }
+        }
+
+        select {
+            width: 100%;
+            max-width: 100%;
+            height: 45px;
+            padding: 8px 50px 8px 15px;
+            font-family: $font-raleway-semibold;
+            font-size: 16px;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid #dbdbdb;
+            border-radius: 0;
+            transition: .35s all ease-in-out;
+            appearance: none;
+            cursor: pointer;
+
+            &::-ms-expand {
+                display: none;
+            }
+
+            &:focus {
+                border-color: $text-color;
+            }
+
+            @include on-event() {
+                border-radius: 0;
+                outline: none;
+            }
+        }
+
+        option {
+            padding: 8px 15px;
+            font-family: $font-raleway-semibold;
+            font-size: 16px;
+        }
+
+        .field-select {
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 17px;
+                right: 15px;
+                width: 0;
+                height: 0;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid $text-color;
+                pointer-events: none;
+            }
+        }
+
+        .field-submit {
+            padding: 0;
+
+            &:before,
+            &:after {
+                pointer-events: none;
+            }
+            
+            input {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 220px;
+                height: auto;
+                padding: 12px 20px;
+                font-family: $font-raleway-semibold;
+                font-size: 18px;
+                color: #000;
+                background-color: $brand-color;
+                text-transform: none;
+                border: none;
+                box-shadow: 0 2px 4px rgba(0,0,0,.5);
+
+                &:hover {
+                    color: #fff;
+                    background-color: $dove-gray;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .wpcf7-not-valid-tip {
+            font-size: 14px;
+        }
+
+        .wpcf7-form .wpcf7-response-output {
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        .column {
+            // width: 100%;
+            // padding: 0;
+
+            input,
+            select,
+            option,
+            textarea {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .wpcf7-not-valid-tip {
+            font-size: 12px;
+        }
+
+        .wpcf7-form .wpcf7-response-output {
+            font-size: 12px;
+        }
+
+        .column {
+            width: 100%;
+            padding: 0;
+
+            .label {
+                display: block;
+            }
+
+            input,
+            select,
+            option,
+            textarea {
+                font-size: 16px;
+            }
+
+            input {
+                height: 40px;
+                padding: 6px 12px;
+            }
+
+            textarea {
+                padding: 10px 12px;
+            }
+
+            select {
+                padding: 6px 32px 6px 12px;
+            }
+
+            .field-select:before {
+                right: 12px;
+                border-left-width: 7px;
+                border-right-width: 7px;
+                border-top-width: 7px;
+            }
+
+            .field-submit {
+                display: flex;
+                justify-content: center;
+
+                &:after {
+                    margin: auto 25px auto 0;
+                }
+            }
+        }
+    }
+}

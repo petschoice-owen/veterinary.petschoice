@@ -1,0 +1,51 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Fonts
+$font-helveticaneue: 'HelveticaNeue';
+$font-helveticaneue-bold: 'HelveticaNeue-Bold';
+$font-helveticaneue-light: 'HelveticaNeue-Light';
+$font-raleway: 'Raleway';
+$font-raleway-bold: 'Raleway Bold';
+$font-raleway-semibold: 'Raleway SemiBold';
+
+/// @type List
+$text-font-stack: $font-raleway, 'Raleway', 'Raleway SemiBold', 'Raleway Bold', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #575758 !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #fcaf17 !default;
+
+/// Light grey
+/// @type Color
+$light-grey: #EDEDED !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: #999 !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: #444 !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../assets/' !default;
+
+$masala: #4A4644;
+$tundora: #4c4c4c;
+$dove-gray: #646464;
+$mercury: #e3e3e3;

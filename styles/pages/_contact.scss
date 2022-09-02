@@ -1,0 +1,134 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the contact page.
+// -----------------------------------------------------------------------------
+
+.page-contact {
+    padding-bottom: 60px;
+
+    .container {
+        position: relative;
+        padding-top: 60px;
+    }
+
+    .social-media {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        display: flex;
+
+        li {
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+        }
+
+        a:hover {
+            opacity: .75;
+        }
+    }
+
+    .image-holder {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 300px;
+        }
+    }
+
+    .text-wrapper {
+        width: 100%;
+        max-width: 745px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        > *:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        p {
+            line-height: 1.3;
+        }
+    }
+
+    .form-wrapper {
+        position: relative;
+        padding-top: 50px;
+        margin-top: 50px;
+        // border-top: 3px solid $brand-color;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $brand-color;
+        }
+
+        .contact-form {
+            padding: 0 150px;
+        }
+    }
+
+
+    @media (max-width: 1199px) {
+        .image-holder img {
+            max-width: 280px;
+        }
+
+        .form-wrapper {
+            .contact-form {
+                padding: 0 80px;
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .contact {
+            overflow: hidden;
+        }
+
+        .form-wrapper {
+            &::before {
+                left: -50vw;
+                width: 150vw;
+            }
+
+            .contact-form {
+                padding: 0;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding-bottom: 30px;
+
+        .social-media {
+            right: 15px;
+        }
+
+        .container {
+            padding-top: 40px;
+        }
+
+        .image-holder img {
+            max-width: 150px;
+        }
+
+        .text-wrapper {
+            & > *:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+
+        .form-wrapper {
+            padding-top: 35px;
+            margin-top: 35px;
+        }
+    }
+}
