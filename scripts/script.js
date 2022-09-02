@@ -25,6 +25,20 @@ var windowScrolled = () => {
     });
 }
 
+// show header on load
+var headerShow = () => {
+    if ($(".top-navigation .navbar").length) {
+        $(".top-navigation .navbar").css("opacity","1");
+    }
+}
+
+// for veterinary subdomain ONLY
+var veterinaryPage = () => {
+    if ($(".page-contact").length) {
+        $(".top-navigation .navbar li:last-child").addClass("active");
+    }
+}
+
 // responsive menus
 var responsiveMenu = () => {
     if ($(".top-navigation .sub-menu").length) {
@@ -100,19 +114,21 @@ var contactForm7 = () => {
 
   
 // initialize the functions
-windowScrolled();
+// windowScrolled();
   
 $(document).ready(function() {
+    veterinaryPage();
     responsiveMenu();
-    parallaxMargin();
+    // parallaxMargin();
     contactForm7();
 });
   
 $(window).resize(function() {
-    parallaxMargin();
+    // parallaxMargin();
 });
   
 window.onload = function() {
+    headerShow();
     responsiveMenu();
     contactForm7();
 }

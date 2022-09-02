@@ -5,7 +5,7 @@
 // ------------------------------------------------------------------------------------
 
 .top-navigation {
-    position: fixed;
+    position: relative;
     top: 0;
     right: initial;
     bottom: initial;
@@ -67,6 +67,7 @@
   
     .navbar {
         padding: 0;
+        opacity: 0;
         transition: .35s ease-in-out all;
         
         .navbar-nav {
@@ -87,6 +88,11 @@
                         pointer-events: all;
                     }
                 }
+            }
+
+            .active a {
+                color: #fff;
+                background-color: $brand-color;
             }
     
             a {
@@ -193,8 +199,10 @@
         }
 
         .navbar-collapse {
-            position: relative;
+            position: absolute;
+            top: 100%;
             z-index: 10;
+            width: 100%;
             background-color: $dove-gray;
         }
 
